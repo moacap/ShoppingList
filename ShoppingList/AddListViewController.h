@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddListViewController : UIViewController
+@interface AddListViewController : UIViewController <UITextFieldDelegate>{ //!! WICHTIG Delegate hinzufügen, sonst wird die Tastatur nicht freigegeben
+    IBOutlet UITextField *name; //TextField für den Namen
+    IBOutlet UIButton *cancel; //Abbruch Button
+    IBOutlet UIButton *add; //Hinzufügen button
+}
+
+@property (nonatomic, retain) UITextField *name; //Getter und Setter erstellen für .xib Datei
+@property (nonatomic, retain) UIButton *cancel;
+@property (nonatomic, retain) UIButton *add;
+
+-(void)close:(id)sender; //Methode zum Abbrechen
+-(void)add:(id)sender; //Methode zum hinzufügen
 
 @end

@@ -79,7 +79,7 @@ NSMutableArray *tables;
 {
     //Beim berühren einer Zelle wird der ItemTableView angezeigt
      ItemTableView *detailViewController = [[ItemTableView alloc] initWithNibName:nil bundle:nil];
-     
+    [detailViewController setTableName:[NSString stringWithFormat:@"%@",[tables objectAtIndex:indexPath.row]]];
      [self.navigationController pushViewController:detailViewController animated:YES];
 }
 

@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShoppingListAppDelegate.h"
+#import <sqlite3.h>
 
-@interface ItemTableView : UITableViewController
+@interface ItemTableView : UITableViewController{
+    NSString *tableName;
+}
 
+@property (nonatomic, retain) NSString *tableName;
+
+-(void)addItem:(id)sender;
+-(void)loadItems;
 @end
